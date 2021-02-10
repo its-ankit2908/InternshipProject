@@ -30,9 +30,11 @@ $isValidChecksum = verifychecksum_e($paramList, PAYTM_MERCHANT_KEY, $paytmChecks
 if($isValidChecksum == "TRUE") {
 	// echo "<b>Checksum matched and following are the transaction details:</b>" . "<br/>";
 	if ($_POST["STATUS"] == "TXN_SUCCESS") {
-		// echo "<b>Transaction status is success</b>" . "<br/>";
-		echo "<script> alert('Paid Successfully'); </script>";
-		echo "<script> location.href = '../index.php' </script>";
+		echo "<b>Transaction status is success</b>" . "<br/>";
+		
+		// echo "<script> alert('Paid Successfully'); </script>";
+		// echo "<script> location.href = '../index.php' </script>";
+
 		//Process your transaction here as success transaction.
 		//Verify amount & order id received from Payment gateway with your application's order id and amount.
 		if(isset($_POST['ORDERID']) && isset($_POST['TXNAMOUNT']))
